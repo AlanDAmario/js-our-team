@@ -38,3 +38,11 @@ const members = [
         photo: 'img/barbara-ramos-graphic-designer.jpg'
     },
 ];
+
+//CICLO FOR PER STAMPARE TUTTI GLI ELEMENTI, MILESTONE 1
+for (let i = 0; i < members.length; i++) {
+    console.log('Nome', members[i].firstname);
+    console.log('Cognome', members[i].lastname);
+    console.log('Ruolo', members[i].role);
+    console.log('Foto', members[i].photo);
+}
