@@ -59,16 +59,22 @@ function printCard(functionMembers) {
     for (let i = 0; i < functionMembers.length; i++) {
         const currentobj = functionMembers[i];
         const li = document.createElement('li');
+        const div = document.createElement('div')
+        div.classList.add('.card')
         const fName = document.createElement('h2');
         const lName = document.createElement('h2');
         const pRole = document.createElement('p');
-        const photo = document.createElement('p')
+        const photo2 = document.createElement('img')
+        photo2.src = currentobj.photo
         fName.append(currentobj.firstname);
         lName.append(currentobj.lastname);
         pRole.append(currentobj.role);
-        photo.append(currentobj.photo);
-        li.append(fName, lName, pRole, photo);
+        photo2.append(currentobj.photo);
+        div.append(fName, lName, pRole, photo2);
+        li.append(div)
         ul.append(li);
     }
 }
 printCard(members);
+
+//
