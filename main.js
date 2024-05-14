@@ -53,28 +53,35 @@ for (let i = 0; i < members.length; i++) {
 }
 
 //STAMPARE SU HTML, Milestone 2
-
 function printCard(functionMembers) {
     const ul = document.querySelector('.list');
     for (let i = 0; i < functionMembers.length; i++) {
+        //CREAZIONE CLASSE PER RIPRENDERE IL CONTENUTO DELL OGGETTO STAMPATO DAL FOR PER RICHIMARLO DOPO SINGOLARMENTE 
         const currentobj = functionMembers[i];
+        // CREAZIONE ELEMENTI DA APPEND SU HTML
         const li = document.createElement('li');
-        const div = document.createElement('div')
-        div.classList.add('.card')
+        const div = document.createElement('div');
+        //CREAZIONE DI UN CLASSE NON STILIZZATA IN CSS
+        div.classList.add('.card');
+        // CREAZIONE VARIABILI PER CREARE ELEMENTI DA APPEND IN HTML
         const fName = document.createElement('h2');
         const lName = document.createElement('h2');
         const pRole = document.createElement('p');
-        const photo2 = document.createElement('img')
-        photo2.src = currentobj.photo
+        //METODOLOGI PER APPEND UN IMG 
+        const photo2 = document.createElement('img');
+        //METODO PER STAMPARE LA FOTO
+        photo2.src = currentobj.photo;
+        //INIZIO DEL METODO APPEND, TRAMITE CURRENTOBJ (CON IL PUNTO RICHIAMO SIGNOLARMENTE IL CONTENUTO DELL OGGETTO) 
         fName.append(currentobj.firstname);
         lName.append(currentobj.lastname);
         pRole.append(currentobj.role);
         photo2.append(currentobj.photo);
+        //RICHIAMO E FINE DELL APPEND TRAMITE ILL SUO METODO
         div.append(fName, lName, pRole, photo2);
-        li.append(div)
+        li.append(div);
         ul.append(li);
     }
 }
+//RICHIAMO FUNZIONE PER FAR APPARIRE TUTTO SU SCHERMO
 printCard(members);
 
-//
